@@ -31,4 +31,6 @@
 
 .input:is(:focus, :valid) {
     outline-color: #20DF7F;
+    padding-left: 10px;
+    width: calc(100% - 10px);
 }
