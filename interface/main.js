@@ -2,13 +2,25 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
-const electron = require('electron')
-
 // Enable live reload for Electron too
 require('electron-reload')(__dirname, {
     // Note that the path to electron may vary according to the main file
     electron: require(`${__dirname}/node_modules/electron`)
 });
+
+(async () => {
+  const database = require('./modules/db');
+  const User = require('./modules/model/user');
+
+  try {
+      const resultado = await database.sync();
+      console.log(resultado);
+  } catch (error) {
+      console.log(error);
+  }
+
+  const user = await User.findAll();
+})();
 
 function createWindow () {
   // Create the browser window.
