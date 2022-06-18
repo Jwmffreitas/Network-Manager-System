@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
+    <link href="./assets/styles/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/inputs.css">
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>First Time!</h1>
-    <p>Crie o acesso de administrador do sistema</p>
-    <input type="text" placeholder="Identificador">
-    <input type="text" placeholder="Senha">
-    <button>Create</button>
+    <section>
+      <h1>First Time!</h1>
+      <p>Crie o acesso de administrador do sistema</p>
+      <div class="input-group">
+        <input type="text" id="identificador" required class="input">
+        <label for="identificador" class="input-label">Identificador</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="senha" required class="input">
+        <label for="senha" class="input-label">Senha</label>
+      </div>
+      <button>Create</button>
+    </section>
+
+    <img src="./assets/images/waves.png" alt="">
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>

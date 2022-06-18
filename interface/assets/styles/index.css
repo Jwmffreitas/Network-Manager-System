@@ -1,0 +1,75 @@
+/* styles.css */
+
+* {
+    font-family: "Lexend Deca";
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+@font-face {
+    font-family: "";
+    src: url("./assets/font/LexendDeca-Regular.ttf")
+}
+
+body {
+    background-color: #093545;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section {
+    margin-top: -120px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+div {
+    margin: 20px 0px;
+}
+
+button {
+    background-color: #20DF7F;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 1s;
+} button:hover {
+    animation: pulsate 1s ease-in-out;
+    background-color: #20df8081;
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 10px #73fab6,
+        0 0 20px #20DF7F;
+    }
+}
+
+img {
+    width: 100%;
+    max-height: 120px;
+    position: absolute;
+    bottom: 0;
+}
+/* Add styles here to customize the appearance of your app */
