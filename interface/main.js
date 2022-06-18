@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+let isFirstTime = true
 
 // Enable live reload for Electron too
 require('electron-reload')(__dirname, {
@@ -20,6 +21,11 @@ require('electron-reload')(__dirname, {
   }
 
   const user = await User.findAll();
+  if (user.length != 0 ) {
+    isFirstTime = false
+  } else {
+    isFirstTime = true
+  }
 })();
 
 function createWindow () {
@@ -32,8 +38,12 @@ function createWindow () {
     }
   })
 
+  if (isFirstTime) {
+    mainWindow.loadFile('index.html')
+  }else {
+    mainWindow.loadFile('login.html')
+  }
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
