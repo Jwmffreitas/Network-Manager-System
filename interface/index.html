@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./assets/styles/index.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/inputs.css">
+    <script src="./assets/js/login_data.js"></script>
     <title>Sign-Up</title>
   </head>
   <body>
@@ -19,7 +20,7 @@
         <input type="text" id="senha" required class="input">
         <label for="senha" class="input-label">Senha</label>
       </div>
-      <button id="button">Create</button>
+      <button id="button" onclick="getUserData()">Create</button>
     </section>
 
     <img src="./assets/images/waves.png" alt="">

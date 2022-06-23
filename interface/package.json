@@ -20,6 +20,7 @@
     "electron": "^19.0.4"
   },
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "electron-reload": "^2.0.0-alpha.1",
     "sequelize": "^6.21.0",
     "sqlite3": "^5.0.8"
