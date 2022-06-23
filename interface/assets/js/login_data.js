@@ -5,7 +5,7 @@ const getUserData = () => {
     let passwd = document.querySelector("#senha").value
 
     let user = {
-        id: id,
+        identifier: id,
         password: passwd
     }
 
@@ -13,7 +13,12 @@ const getUserData = () => {
 }
 
 const sendData = (user) => {
-    console.log(ipcRenderer.sendSync("signup", user))
+    let data = ipcRenderer.sendSync("signup", user)
+    console.log(data)
+
+    if(data.includes("409")) {
+        alert(data)
+    }
 }
 
 module.exports = {

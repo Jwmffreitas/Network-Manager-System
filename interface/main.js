@@ -2,6 +2,7 @@
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path');
 const { encrypt } = require('./modules/crypto');
+const { createUser } = require('./modules/user');
 let isFirstTime = true
 
 // Enable live reload for Electron too
@@ -75,10 +76,15 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-ipcMain.on("signup", (e, user_data) => {
+ipcMain.on("signup", async (e, user_data) => {
   console.log("signup", JSON.stringify(user_data));
+  let data = user_data
 
-  console.log(encrypt(user_data.password));
+  let pass_encrypted = encrypt(data.password);
+  data = {identifier: user_data.identifier, password: pass_encrypted}
 
-  e.returnValue = "Oii main"
+  data = await createUser(data)
+  console.log("data", data)
+
+  e.returnValue = JSON.stringify(data)
 })
