@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">-->
     <link href="./assets/styles/index.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/inputs.css">
+    <script src="./assets/js/login_data.js"></script>
     <title>Login</title>
   </head>
   <body>
@@ -19,7 +20,7 @@
         <input type="text" id="senha" required class="input">
         <label for="senha" class="input-label">Senha</label>
       </div>
-      <button>Entrar</button>
+      <button id="button" onclick="getUserData(false)">Entrar</button>
     </section>
 
     <img src="./assets/images/waves.png" alt="">

@@ -2,8 +2,9 @@
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path');
 const { encrypt } = require('./modules/crypto');
-const { createUser } = require('./modules/user');
+const { createUser, verifyUser } = require('./modules/user');
 let isFirstTime = true
+let mainWindow
 
 // Enable live reload for Electron too
 require('electron-reload')(__dirname, {
@@ -11,7 +12,7 @@ require('electron-reload')(__dirname, {
     electron: require(`${__dirname}/node_modules/electron`)
 });
 
-(async () => {
+async function connectDB () {
   const database = require('./modules/db');
   const User = require('./modules/model/user');
 
@@ -23,18 +24,20 @@ require('electron-reload')(__dirname, {
   }
 
   const user = await User.findAll();
+  console.log(user.length)
   if (user.length != 0 ) {
     isFirstTime = false
   } else {
     isFirstTime = true
   }
-})();
+}
 
 function createWindow () {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame : false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -56,7 +59,8 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  await connectDB()
   createWindow()
 
   app.on('activate', function () {
@@ -73,9 +77,6 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
 ipcMain.on("signup", async (e, user_data) => {
   console.log("signup", JSON.stringify(user_data));
   let data = user_data
@@ -87,4 +88,23 @@ ipcMain.on("signup", async (e, user_data) => {
   console.log("data", data)
 
   e.returnValue = JSON.stringify(data)
+
+  app.relaunch();
+  app.exit();
+})
+
+ipcMain.on("login", async (e, user_data) => {
+  console.log("login", JSON.stringify(user_data));
+  let data = user_data
+
+  let pass_encrypted = encrypt(data.password);
+  data = {identifier: user_data.identifier, password: pass_encrypted}
+
+  data = await verifyUser(data)
+  if(data.includes("200")) {
+    mainWindow.loadFile('dash.html')
+    mainWindow.show()
+  }else {
+    e.returnValue = JSON.stringify(data)
+  }
 })

@@ -1,3 +1,4 @@
+const { encrypt } = require('./crypto');
 const User = require('./model/user');
 
 const createUser = async (user_data) => {
@@ -18,6 +19,21 @@ const createUser = async (user_data) => {
     }
 }
 
+const verifyUser = async (user_data) => {
+    const {identifier, password } = user_data;
+
+    let user = await User.findOne({where: {identifier: identifier}})
+
+    console.log("verify", user.dataValues.password)
+
+    if(user.dataValues.password == password) {
+        console.log('É igual maninho')
+        return `200`
+    }else {
+        return `403 - Erro ao verificar as credenciais`
+    }
+}
+
 module.exports = {
-    createUser
+    createUser, verifyUser
 }
