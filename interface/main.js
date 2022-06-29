@@ -37,7 +37,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    frame : false,
+    frame : true,
+    movable: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -48,7 +49,8 @@ function createWindow () {
   if (isFirstTime) {
     mainWindow.loadFile('index.html')
   }else {
-    mainWindow.loadFile('login.html')
+    //mainWindow.loadFile('login.html')
+    mainWindow.loadFile('dash.html')
   }
   // and load the index.html of the app.
 
@@ -102,6 +104,7 @@ ipcMain.on("login", async (e, user_data) => {
 
   data = await verifyUser(data)
   if(data.includes("200")) {
+    e.returnValue = JSON.stringify(data)
     mainWindow.loadFile('dash.html')
     mainWindow.show()
   }else {
