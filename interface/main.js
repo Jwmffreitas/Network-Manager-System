@@ -35,8 +35,8 @@ async function connectDB () {
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 700,
     frame : true,
     movable: true,
     webPreferences: {
@@ -50,7 +50,7 @@ function createWindow () {
     mainWindow.loadFile('index.html')
   }else {
     //mainWindow.loadFile('login.html')
-    mainWindow.loadFile('dash.html')
+    mainWindow.loadFile('login.html')
   }
   // and load the index.html of the app.
 
