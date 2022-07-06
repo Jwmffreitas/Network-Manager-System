@@ -5,6 +5,7 @@ let wasSearched = false
 
 
 function network_scan() {
+  document.querySelector("#button").disabled = true;
   if(wasSearched) {
     document.querySelector('#network_table').style.display = "none"
   }
@@ -49,6 +50,7 @@ const show_network_data = (data) => {
     });
 
     wasSearched = true
+    document.querySelector("#button").disabled = false;
 }
 
 module.exports = {

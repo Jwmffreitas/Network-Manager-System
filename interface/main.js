@@ -105,7 +105,8 @@ ipcMain.on("login", async (e, user_data) => {
   data = await verifyUser(data)
   if(data.includes("200")) {
     e.returnValue = JSON.stringify(data)
-    mainWindow.loadFile('dash.html')
+    //mainWindow.loadFile('dash.html')
+    mainWindow.loadFile('dash_user.html')
     mainWindow.show()
   }else {
     e.returnValue = JSON.stringify(data)

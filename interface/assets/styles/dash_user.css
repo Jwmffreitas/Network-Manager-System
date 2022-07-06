@@ -72,39 +72,22 @@ h2 {
     width: fit-content;
 }
 
-button {
-    background-color: transparent;
-    border: #20DF7F solid 1px;
-    outline: none;
-    border-radius: 5px;
-    padding: 10px;
-    color: #20DF7F;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 500ms;
-}button:hover {
-    background-color: #20DF7F;
-    color: white;
-}button i {
-    font-size: 15px;
-    color: #20DF7F;
-    margin-right: 10px;
-    transition: 500ms;
-} button:hover i {
-    color: white;
-}
-
 #network_table {
     width: 100%;
     margin-top: 30px;
     /*display: none;*/
 }
 
-td:last-child {
+td:nth-child(2) {
     border-radius: 5px;
-    background-color: rgba(252, 184, 89, 0.12);
+    background-color: black;
     border: rgba(252, 184, 89, 1) solid 1px;
     color: rgba(252, 184, 89, 1);
+    color: rgba(252, 184, 89, 0.01);
+    text-align: center;
+}
+
+td:last-child {
     text-align: center;
 }
 
@@ -146,4 +129,8 @@ th {
 
 #broadcast {
     margin-top: 30px;
+}
+
+.eye {
+    color: #20DF7F;
 }
