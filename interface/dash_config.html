@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">-->
+    <link href="./assets/styles/dash.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/inputs.css">
+    <link rel="stylesheet" href="./assets/styles/loading.css">
+    <script src="https://kit.fontawesome.com/35cfca1e90.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/network_scan.js"></script>
+    <script src="./assets/js/delete.js"></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <div class="menu">
+        <div class="icon">
+            <a href="dash.html"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="icon">
+            <a href="dash_user.html"><i class="fa-regular fa-user"></i></a>
+        </div>
+        <div class="icon selected">
+          <a href="dash_config.html"><i class="fa-solid fa-gear selected"></i></a>
+        </div>
+        <div class="icon" onclick="exit()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+      </div>
+      <section>
+        <div class="title">
+          <h2>Configurações gerais</h2>
+        </div>
+        <div class="warning">
+            <h1><i class="fa-solid fa-circle-exclamation"></i>CUIDADO</h1>
+            <button id="button" onclick="deleteUser()"><i class="fa-solid fa-trash"></i> Deletar dados</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>

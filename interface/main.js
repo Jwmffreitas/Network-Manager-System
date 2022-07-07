@@ -2,7 +2,7 @@
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path');
 const { encrypt } = require('./modules/crypto');
-const { createUser, verifyUser } = require('./modules/user');
+const { createUser, verifyUser, deleteUser } = require('./modules/user');
 let isFirstTime = true
 let mainWindow
 
@@ -37,8 +37,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 900,
     height: 700,
-    frame : true,
-    movable: true,
+    frame : false,
+    movable: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -106,9 +106,20 @@ ipcMain.on("login", async (e, user_data) => {
   if(data.includes("200")) {
     e.returnValue = JSON.stringify(data)
     //mainWindow.loadFile('dash.html')
-    mainWindow.loadFile('dash_user.html')
+    mainWindow.loadFile('dash.html')
     mainWindow.show()
   }else {
     e.returnValue = JSON.stringify(data)
   }
+})
+
+ipcMain.on("delete", async (e) => {
+  data = await deleteUser()
+  if(data.includes("200")) {
+    app.exit();
+  }
+})
+
+ipcMain.on("close", async (e) => {
+  app.exit();
 })

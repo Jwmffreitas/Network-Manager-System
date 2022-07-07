@@ -34,6 +34,13 @@ const verifyUser = async (user_data) => {
     }
 }
 
+const deleteUser = async () => {
+    const user = await User.findAll();
+    console.log('baby' ,JSON.stringify(user))
+    User.destroy({where: {id: user[0].id}})
+    return `200`
+}
+
 module.exports = {
-    createUser, verifyUser
+    createUser, verifyUser, deleteUser
 }
