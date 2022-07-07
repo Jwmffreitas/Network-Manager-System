@@ -75,7 +75,7 @@ h2 {
 #network_table {
     width: 100%;
     margin-top: 30px;
-    /*display: none;*/
+    display: none;
 }
 
 td:nth-child(2) {

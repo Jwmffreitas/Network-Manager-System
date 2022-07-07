@@ -44,11 +44,11 @@
         </div>
         <div class="wifi">
           <h3>Wifi Connections</h3>
-          <div class="svg-wrapper">
+          <div class="svg-wrapper" onclick="scan_wifi()">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
               <rect id="shape" height="40" width="150" />
               <div id="text">
-                <a href=""><span class="spot"></span><i class="fa-solid fa-magnifying-glass"></i>Buscar dados</a>
+                <span class="spot"></span><i class="fa-solid fa-magnifying-glass"></i>Buscar dados
               </div>
             </svg>
           </div>
@@ -59,13 +59,13 @@
             <th>Senha</th>
             <th></th>
           </tr>
-          <tr>
+          <!--<tr>
             <td>XxX</td>
             <td id="password-1">SENHATESTE</td>
             <td><i class="fa-solid fa-eye eye" id="see-1" onclick="show_password('see-1', 'password-1')"></i></td>
-          </tr>
+          </tr>-->
         </table>
-        <div class="lds-ellipsis" id="loading"><div></div><div></div><div></div><div></div></div>
+        <div class="lds-ellipsis" id="loading" style="margin-top: 10vh;"><div></div><div></div><div></div><div></div></div>
         <svg width="606" height="762" id="broadcast" viewBox="0 0 606 762" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_483_2)">
           <path d="M550.14 79.38C559 86.4335 566.358 95.1897 571.78 105.132C577.202 115.075 580.579 126.002 581.71 137.27C581.877 138.948 582.673 140.5 583.939 141.613C585.204 142.727 586.845 143.319 588.53 143.27L598.77 142.97C599.684 142.944 600.583 142.731 601.412 142.343C602.24 141.955 602.98 141.402 603.586 140.716C604.191 140.031 604.65 139.228 604.933 138.359C605.216 137.489 605.317 136.57 605.23 135.66C602.601 107.871 589.377 82.1591 568.301 63.8571C547.225 45.5552 519.914 36.067 492.03 37.36C491.116 37.4023 490.221 37.6315 489.4 38.0335C488.578 38.4354 487.847 39.0016 487.253 39.697C486.659 40.3924 486.214 41.2022 485.945 42.0765C485.676 42.9508 485.589 43.8709 485.69 44.78L486.83 54.96C487.013 56.6294 487.821 58.1676 489.092 59.2657C490.363 60.3639 492.002 60.9406 493.68 60.88C514.115 60.0353 534.167 66.6056 550.14 79.38V79.38Z" fill="#20DF7F"/>

@@ -20,6 +20,7 @@
   */
   
   .svg-wrapper {
+    cursor: pointer;
     margin-top: 0;
     position: relative;
     width: 150px;
