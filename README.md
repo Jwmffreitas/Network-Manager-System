@@ -2,6 +2,39 @@
 
 Sistema de gerenciamento de rede desenvolvido utilizando **JavaScript** (Node.JS e Electron.JS) para a Interface e gerenciamento de usuário e **Python** com scripts para comunicação com a placa de rede e obtenção de dados da rede.
 
+## Estrutura do Repositório
+
+```
+.
+├── interface
+│   ├── assets/
+│   ├── db/
+│   ├── modules/
+│   ├── *.html
+│   └── *.js
+├── network_scan.py
+├── wifi_password.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+## Configuração
+
+`interface/*` - Pasta destinada ao código da interface e fluxo de login
+
+`interface/db/` - Diretório de armazenamento dos arquivos de banco de dados
+
+`interface/assets/*` - Contém arquivos da estilização do programa (Front da aplicação)
+
+`interface/modules/` - Códigos referente ao core da comunicação do projeto (Node.JS)
+
+`network_scan.py` - Script responsável pelo escaneamento da rede para descoberta de dispositivos
+
+`wifi_password.py` - Script responsável pela obtenção dos dados de conexão de Wifis conhecidos
+
+`requirements.txt` - Arquivo contendo os requisitos de instalação do Python para o projeto
+
 # Funcionalidades
 
 O princípio do projeto é ter uma autenticação funcional para o administrador e funcionalidades para auxiliar no controle da rede.
@@ -75,6 +108,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ## :gear: Iniciando a interface
 ```bash
   # Iniciar a aplicação:
+  $ pip install -r requirements.txt  
   $ cd Interface
   $ npm install
   $ npm start
