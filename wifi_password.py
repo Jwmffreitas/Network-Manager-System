@@ -1,4 +1,3 @@
-# importing subprocess
 import subprocess
 
 # getting meta data
@@ -11,8 +10,6 @@ data = meta_data.decode('utf-8', errors="backslashreplace")
 data = data.split('\n')
 
 network_data = []
-
-# creating a list of profiles
 profiles = []
 
 # traverse the data
@@ -35,18 +32,10 @@ for i in data:
 		profiles.append(i)
 		
 
-# printing heading	
-#print("{:<30}| {:<}".format("Wi-Fi Name", "Password"))
-#print("----------------------------------------------")
-
 network_data.append(profiles)
 passwords = []
 
-# traversing the profiles	
 for i in profiles:
-	
-	# try catch block begins
-	# try block
 	try:
 		# getting meta data with password using wifi name
 		results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i, 'key=clear'])
@@ -60,16 +49,13 @@ for i in profiles:
 		
 		# if there is password it will print the pass word
 		try:
-			#print("{:<30}| {:<}".format(i, results[0]))
 			passwords.append(results[0])
 		
-		# else it will print blank in front of pass word
 		except IndexError:
 			print("{:<30}| {:<}".format(i, ""))
 			
 	
 			
-	# called when this process get failed
 	except subprocess.CalledProcessError:
 		print("Encoding Error Occurred")
 
