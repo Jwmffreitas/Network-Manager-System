@@ -104,6 +104,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Ter [**Python**](https://www.python.org) instalado.
 - Ter [**Node.JS**](https://nodejs.org/en/) instalado.
 - Ter [**Npcap**](https://npcap.com) de driver instalado para comunicação com a placa de rede.
+- Ter [**Microsoft Visual C++ 14.0 ou mais recentes**](https://visualstudio.microsoft.com/pt-br/visual-cpp-build-tools/) instalado para o funcionamento do netifaces do Python.
 
 ## :gear: Iniciando a interface
 ```bash
