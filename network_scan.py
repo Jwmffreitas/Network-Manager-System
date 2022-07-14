@@ -1,9 +1,13 @@
 import scapy.all as scapy
 import socket as s
+import netifaces
 
 
 def get_args():
-    return "192.168.10.0/24"
+    gws = netifaces.gateways()
+    gateway = gws['default'][netifaces.AF_INET][0]
+    print(gateway)
+    return f'{gateway}/24'
 
 
 def scan(ip):

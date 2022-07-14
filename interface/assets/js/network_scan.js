@@ -30,7 +30,7 @@ const show_network_data = (data) => {
     document.querySelector('#network_table').style.display = "table"
     document.querySelector('#loading').style.display = "none"
 
-    data = data[0]
+    data = data[1]
     data = data.replace(/'/g,'"')
     data = JSON.parse(String(data))
     console.log(JSON.stringify(data))
