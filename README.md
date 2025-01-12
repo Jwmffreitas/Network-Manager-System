@@ -63,8 +63,8 @@ Login->> Dashboard App: Open App
 
 > Todas as senhas são armazenas em Hash para melhor segurança.
 
-![Tela de registro](https://media.discordapp.net/attachments/994748510031327363/994748522056392795/unknown.png?ex=6605fec1&is=65f389c1&hm=34c7c6a2cd66654f326525d1fe6cfe54692649752ce1af6c70f9ac61e3f0b42e&=&format=webp&quality=lossless&width=602&height=468)
-![Tela de Login](https://media.discordapp.net/attachments/994748510031327363/994750613936148540/unknown.png?ex=660600b3&is=65f38bb3&hm=42455d4b7bcff2e3fdcd870fb62e1a4e2eb7dd672e78727e2cf8f7aadfe36d72&=&format=webp&quality=lossless&width=602&height=468)
+![Tela de registro](https://github.com/Jwmffreitas/Network-Manager-System/blob/main/public/img/cadastro.png)
+![Tela de Login](https://github.com/Jwmffreitas/Network-Manager-System/blob/main/public/img/login.png)
  - Exibição de erros
 -- Caso sejam enviados dados inválidos ou incompatíveis com o Login criado anteriormente, é exibida uma mensagem de erro para o usuário
 
@@ -72,16 +72,16 @@ Login->> Dashboard App: Open App
  - [x] Varredura na rede para descobrir quais dispositivos estão conectados;
  -- Depois da varredura, é exibida uma tabela com **IP**, Endereço **MAC** e o **Nome do Dispositvo** identificado pelo roteador.
  
-![Dispositivos conectados](https://media.discordapp.net/attachments/994748510031327363/994752161714024489/unknown.png?ex=66060224&is=65f38d24&hm=f85d7974ac0901dab74b59393150161132b8976fd5d06ca00194b9ac5c864b1c&=&format=webp&quality=lossless&width=602&height=468)
+![Dispositivos conectados](https://github.com/Jwmffreitas/Network-Manager-System/blob/main/public/img/dispositivos.png)
  - [x] Design Amigável;
 	
-![design](https://media.discordapp.net/attachments/994748510031327363/994752740486037504/unknown.png?ex=660602ae&is=65f38dae&hm=b319494eee44a3346efecef78a73fbb6db11e0093c38743b2ee30faa1cfc529e&=&format=webp&quality=lossless&width=602&height=468)
+![design](https://github.com/Jwmffreitas/Network-Manager-System/blob/main/public/img/dispositivos1.png)
  - [x] Loading para simbolizar carregamento e melhor a experiência do usuário;
 
-![loading](https://media.discordapp.net/attachments/994748510031327363/994752789001539645/unknown.png?ex=660602ba&is=65f38dba&hm=85bb71eeaccde438254803a8645d9d5c65180445d668cac320a307ff01703dbc&=&format=webp&quality=lossless&width=602&height=468)
+![loading](https://github.com/Jwmffreitas/Network-Manager-System/blob/main/public/img/loading.png)
  - [x] Busca de Wifis conhecidos e suas senhas;
 
-![wifi](https://media.discordapp.net/attachments/994748510031327363/994753289239416872/unknown.png?ex=66060331&is=65f38e31&hm=f9fcb9c1129cc7f8ca2650ced241cb655cb21faed69bb51640d629cf8986efec&=&format=webp&quality=lossless&width=602&height=468)
+![wifi](https://github.com/Jwmffreitas/Network-Manager-System/blob/main/public/img/dados.png)
 
  - [x] Opção de deletar os dados fornecidos de acordo com os requisitos da **LGPD**;
 
